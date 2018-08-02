@@ -31,3 +31,6 @@
 /react-app/node_modules/
 /spring-app/out/
 /react-app/webpack.dev.config.js
+.DS_store
+/install.txt
+/out.txt
