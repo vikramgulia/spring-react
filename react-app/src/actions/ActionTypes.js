@@ -1,0 +1,2 @@
+export const SECURITY_CHECK = 'SECURITY_CHECK'
+export const LOGIN_RESULT = 'LOGIN_RESULT'

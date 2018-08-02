@@ -1,0 +1,33 @@
+apply plugin: 'base'
+
+task start(type: Exec) {
+    inputs.file("package-lock.json").withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.file("webpack.config.js").withPathSensitivity(PathSensitivity.RELATIVE)
+    commandLine "./node_modules/.bin/webpack-dev-server", '--mode', 'development', '--devtool', 'inline-source-map', '--hot'
+}
+
+task npm_install(type: Exec) {
+    commandLine "npm", 'install'
+    standardOutput = new FileOutputStream("./install.txt")
+}
+
+task test(type: Exec) {
+    commandLine "npm", 'test'
+    standardOutput = new FileOutputStream("./out.txt")
+}
+
+// webpack task
+task webpack(type: Exec) {
+    inputs.file("package-lock.json").withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.file("webpack.config.js").withPathSensitivity(PathSensitivity.RELATIVE)
+    outputs.cacheIf { true }
+    commandLine "./node_modules/.bin/webpack-cli", '--mode', 'production'
+}
+
+clean {
+    delete 'dist'
+}
+
+check.dependsOn(test)
+assemble.dependsOn(npm_install)
+assemble.dependsOn(webpack)

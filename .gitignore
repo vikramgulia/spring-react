@@ -1,0 +1,33 @@
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/node_modules/
+/src/main/resources/static/js/
+/react-app/dist/
+/spring-app/build/
+/react-app/node_modules/
+/spring-app/out/
+/react-app/webpack.dev.config.js
