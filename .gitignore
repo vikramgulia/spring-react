@@ -34,3 +34,6 @@
 .DS_store
 /install.txt
 /out.txt
+spring-app/src/main/resources/static/
+/react-app/package-lock.json
+/react-app/.DS_Store
